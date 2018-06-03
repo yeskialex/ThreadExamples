@@ -1,21 +1,20 @@
 package edu.handong.csee.java.examples.thread;
 
-public class HelloRunnable implements Runnable {
-	
+public class HelloThread extends Thread{
+
 	static int staticCount = 0;
 	int count = 0;
-
+	
 	public static void main(String[] args) {
 		int numThreads = 10;
-		Thread[] theads = new Thread[numThreads];
+		HelloThread[] theads = new HelloThread[numThreads];
 		
 		for(int i=0;i<numThreads;i++) {
-			theads[i] = new Thread(new HelloRunnable());
+			theads[i] = new HelloThread();
 			theads[i].start();
 		}
 	}
-
-	@Override
+	
 	public void run() {
 		staticCount++;
 		count++;
