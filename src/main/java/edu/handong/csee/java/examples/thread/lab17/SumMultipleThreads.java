@@ -52,7 +52,7 @@ public class SumMultipleThreads implements Runnable{
 			grandTotal += runner.totalSum;
 		}
 		
-		System.out.println(grandTotal);
+		System.out.println("Grand Total = " + grandTotal);
 	}
 
 	@Override
