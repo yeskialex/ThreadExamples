@@ -24,19 +24,20 @@ public class SumMultipleThreads implements Runnable{
 		long to = 10000000;
 		ArrayList<SumMultipleThreads> sumRunners = new ArrayList<SumMultipleThreads>();
 		
+		/* Let a thread compute a sub-sum.
+		 * sumRunners.add(new SumMultipleThreads(1,1000000));
+		 * sumRunners.add(new SumMultipleThreads(1000001,2000000));
+		 * sumRunners.add(new SumMultipleThreads(2000001,3000000));
+		 * sumRunners.add(new SumMultipleThreads(3000001,4000000));
+		 * sumRunners.add(new SumMultipleThreads(4000001,5000000));
+		 * sumRunners.add(new SumMultipleThreads(5000001,6000000));
+		 * sumRunners.add(new SumMultipleThreads(6000001,7000000));
+		 * sumRunners.add(new SumMultipleThreads(7000001,8000000));
+		 * sumRunners.add(new SumMultipleThreads(8000001,9000000));
+		 * sumRunners.add(new SumMultipleThreads(9000001,10000000));*/
 		for(long i=0; i<to/1000000; i++) {
 			sumRunners.add(new SumMultipleThreads((i*1000000)+1, (i+1)*1000000));
 		}
-		/*sumRunners.add(new SumMultipleThreads(1,1000));
-		sumRunners.add(new SumMultipleThreads(1001,2000));
-		sumRunners.add(new SumMultipleThreads(2001,3000));
-		sumRunners.add(new SumMultipleThreads(3001,4000));
-		sumRunners.add(new SumMultipleThreads(4001,5000));
-		sumRunners.add(new SumMultipleThreads(5001,6000));
-		sumRunners.add(new SumMultipleThreads(6001,7000));
-		sumRunners.add(new SumMultipleThreads(7001,8000));
-		sumRunners.add(new SumMultipleThreads(8001,9000));
-		sumRunners.add(new SumMultipleThreads(9001,10000));*/
 		
 		ArrayList<Thread> threadsForSubSum = new ArrayList<Thread>();
 		
