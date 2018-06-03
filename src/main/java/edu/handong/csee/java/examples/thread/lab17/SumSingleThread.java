@@ -19,7 +19,7 @@ public class SumSingleThread {
 
 	public static void main(String[] args) {
 		SumSingleThread runner = new SumSingleThread(1,10000000);
-		System.out.println(runner.getTotalSumFromTo());
+		System.out.println("Grand Total = " + runner.getTotalSumFromTo());
 		
 	}
 }
