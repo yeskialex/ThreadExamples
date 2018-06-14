@@ -23,8 +23,8 @@ public class MainToMimicJoin {
 
 		ArrayList<Callable<Object>> calls = new ArrayList<Callable<Object>>();
 		for(long i=0; i<to/1000000; i++) {
-			SumPartiallyThread worker = new SumPartiallyThread((i*1000000)+1, (i+1)*1000000);
-			sumRunners.add(worker);
+			Runnable worker = new SumPartiallyThread((i*1000000)+1, (i+1)*1000000);
+			sumRunners.add((SumPartiallyThread)worker);
 			calls.add(Executors.callable(worker));
 		}
 		
@@ -33,6 +33,8 @@ public class MainToMimicJoin {
 		} catch (InterruptedException e) {
 			e.printStackTrace();
 		}
+		
+		executor.shutdown();
 		
 		long grandTotal = 0;
 		for(SumPartiallyThread runner:sumRunners) {
