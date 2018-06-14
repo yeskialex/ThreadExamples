@@ -23,10 +23,9 @@ public class MainToMimicJoin {
 
 		ArrayList<Callable<Object>> calls = new ArrayList<Callable<Object>>();
 		for(long i=0; i<to/1000000; i++) {
-			Runnable worker = new SumPartiallyThread((i*1000000)+1, (i+1)*1000000);
-			executor.execute(worker);
-			sumRunners.add((SumPartiallyThread)worker);
-			calls.add(Executors.callable(new SumPartiallyThread((i*1000000)+1, (i+1)*1000000)));
+			SumPartiallyThread worker = new SumPartiallyThread((i*1000000)+1, (i+1)*1000000);
+			sumRunners.add(worker);
+			calls.add(Executors.callable(worker));
 		}
 		
 		try {
