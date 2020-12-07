@@ -38,7 +38,7 @@ public class MainToMimicJoin {
 		
 		long grandTotal = 0;
 		for(SumPartiallyThread runner:sumRunners) {
-			grandTotal += runner.totalSum;
+			grandTotal += runner.getTotalSum();
 		}
 		
 		System.out.println("Grand Total = " + grandTotal);

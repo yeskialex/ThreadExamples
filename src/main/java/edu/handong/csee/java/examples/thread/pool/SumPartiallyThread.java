@@ -2,11 +2,11 @@ package edu.handong.csee.java.examples.thread.pool;
 
 public class SumPartiallyThread implements Runnable{
 
-	long from, to, totalSum;
+	private long from, to, totalSum;
 	
 	@Override
 	public void run() {
-		totalSum = getTotalSumFromTo();
+		sumTotalSumFromTo();
 		System.out.println("Computed from " + from + " to " + to);
 	}
 
@@ -15,11 +15,16 @@ public class SumPartiallyThread implements Runnable{
 		this.to= to;
 	}
 
-	public long getTotalSumFromTo() {
+	public void sumTotalSumFromTo() {
 		long total = 0;
 		for(long i=from;i<=to;i++)
 			total+=i;
-
-		return total;
+		
+		totalSum = total;
+		
+	}
+	
+	public long getTotalSum() {
+		return totalSum;
 	}
 }

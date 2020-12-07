@@ -44,7 +44,7 @@ public class MainToTestThreadPool {
 
 		long grandTotal = 0;
 		for(SumPartiallyThread runner:sumRunners) {
-			grandTotal += runner.totalSum;
+			grandTotal += runner.getTotalSum();
 		}
 		
 
