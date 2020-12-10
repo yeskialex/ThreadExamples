@@ -16,6 +16,13 @@ public class SumRunner implements Runnable{
 	}
 
 	public long getTotalSumFromTo() {
+		
+		try {
+			Thread.sleep(1000);
+		} catch (InterruptedException e) {
+			e.printStackTrace();
+		}
+		
 		long total = 0;
 		for(long i=from;i<=to;i++)
 			total+=i;
