@@ -6,14 +6,14 @@ public class CounterIterferenceDemo {
 		
 		Counter counter = new Counter();
 		
-		CounterThread one = new CounterThread(counter, 1);
-		CounterThread two = new CounterThread(counter, 2);
+		CounterThreadA runnableA = new CounterThreadA(counter, "A");
+		CounterThreadB runnableB = new CounterThreadB(counter, "B");
 		
-		Thread threadOne = new Thread(one);
-		Thread threadTwo = new Thread(two);
+		Thread threadA = new Thread(runnableA);
+		Thread threadB = new Thread(runnableB);
 		
-		threadOne.start();
-		threadTwo.start();
+		threadA.start();
+		threadB.start();
 				
 	}
 
