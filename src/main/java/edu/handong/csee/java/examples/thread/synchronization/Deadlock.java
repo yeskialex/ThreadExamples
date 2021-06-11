@@ -9,16 +9,16 @@ public class Deadlock {
 		public String getName() {
 			return this.name;
 		}
-		public synchronized void bow(Friend bower) {
-			System.out.format("%s: %s"
-					+ "  has bowed to me!%n", 
-					this.name, bower.getName());
-			bower.bowBack(this);
+		public synchronized void bowTo(Friend toFriend) {
+			System.out.format("%s"
+					+ " has bowed to %s!%n", 
+					this.name, toFriend.getName());
+			toFriend.bowBack(this);
 		}
-		public synchronized void bowBack(Friend bower) {
-			System.out.format("%s: %s"
+		public synchronized void bowBack(Friend toFriend) {
+			System.out.format("%s"
 					+ " has bowed back to me!%n",
-					this.name, bower.getName());
+					this.name, toFriend.getName());
 		}
 	}
 
@@ -28,10 +28,10 @@ public class Deadlock {
 		final Friend gaston =
 				new Friend("Gaston");
 		new Thread(new Runnable() {
-			public void run() { alphonse.bow(gaston); }
+			public void run() { alphonse.bowTo(gaston); }
 		}).start();
 		new Thread(new Runnable() {
-			public void run() { gaston.bow(alphonse); }
+			public void run() { gaston.bowTo(alphonse); }
 		}).start();
 	}
 }
