@@ -3,9 +3,9 @@ package edu.handong.csee.java.examples.thread.synchronization;
 public class Counter {
 	private int c = 0;
     public void RunIncrease(String threadName) {
-    	System.out.println(threadName + " is " + getValue() + " and is increasing.");
+    	System.out.println("The " + threadName + "'s counter is " + getValue() + " and is increasing.");
         increase();
-        System.out.println(threadName + "'s value is now: " + getValue() );
+        System.out.println("The " + threadName + "'s counter value is now: " + getValue() );
     }
     
     public void increase() {
@@ -13,9 +13,9 @@ public class Counter {
     }
     
     public void runDecrease(String threadName) {
-    	System.out.println(threadName + " is "  + getValue() + " and is decreasing.");
+    	System.out.println("The " + threadName + "'s counter is " + getValue() + " and is decreasing.");
         decrease();
-        System.out.println(threadName + "'s value is now: " + getValue() );
+        System.out.println("The " + threadName + "'s counter value is now: " + getValue() );
     }
     
     public void decrease() {

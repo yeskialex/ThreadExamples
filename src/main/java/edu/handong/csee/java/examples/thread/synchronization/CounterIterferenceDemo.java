@@ -6,6 +6,8 @@ public class CounterIterferenceDemo {
 		
 		Counter counter = new Counter();
 		
+		System.out.println("Counter resoruces are used by A and B!");
+		
 		CounterThreadA runnableA = new CounterThreadA(counter, "A");
 		CounterThreadB runnableB = new CounterThreadB(counter, "B");
 		
