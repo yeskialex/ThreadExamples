@@ -6,7 +6,7 @@ public class CounterIterferenceDemo {
 		
 		Counter counter = new Counter();
 		
-		System.out.println("The same counter resoruce is shared for for both Thread A and B!");
+		System.out.println("The same counter resoruce is shared for both Thread A and B!");
 		
 		CounterThreadA runnableA = new CounterThreadA(counter, "A");
 		CounterThreadB runnableB = new CounterThreadB(counter, "B");
